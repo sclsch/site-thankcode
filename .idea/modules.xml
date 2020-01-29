@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/thankcode-auth/auth-api/auth-api.iml" filepath="$PROJECT_DIR$/thankcode-auth/auth-api/auth-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-auth/auth-server/auth-server.iml" filepath="$PROJECT_DIR$/thankcode-auth/auth-server/auth-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-blog/blog-api/blog-api.iml" filepath="$PROJECT_DIR$/thankcode-blog/blog-api/blog-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-blog/blog-server/blog-server.iml" filepath="$PROJECT_DIR$/thankcode-blog/blog-server/blog-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/site-thankcode.iml" filepath="$PROJECT_DIR$/.idea/site-thankcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-auth/thankcode-auth.iml" filepath="$PROJECT_DIR$/thankcode-auth/thankcode-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-blog/thankcode-blog.iml" filepath="$PROJECT_DIR$/thankcode-blog/thankcode-blog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-cache-starter/thankcode-cache-starter.iml" filepath="$PROJECT_DIR$/thankcode-cache-starter/thankcode-cache-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-common/thankcode-common.iml" filepath="$PROJECT_DIR$/thankcode-common/thankcode-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-eureka/thankcode-eureka.iml" filepath="$PROJECT_DIR$/thankcode-eureka/thankcode-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-parent/thankcode-parent.iml" filepath="$PROJECT_DIR$/thankcode-parent/thankcode-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-starter-parent/thankcode-starter-parent.iml" filepath="$PROJECT_DIR$/thankcode-starter-parent/thankcode-starter-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-web/thankcode-web.iml" filepath="$PROJECT_DIR$/thankcode-web/thankcode-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thankcode-zuul/thankcode-zuul.iml" filepath="$PROJECT_DIR$/thankcode-zuul/thankcode-zuul.iml" />
+    </modules>
+  </component>
+</project>

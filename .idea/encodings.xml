@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/thankcode-auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-auth/auth-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-auth/auth-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-auth/auth-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-auth/auth-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-blog/blog-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-blog/blog-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-blog/blog-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-cache-starter" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-cache-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-parent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-parent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-starter-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-starter-parent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-starter-parent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/thankcode-zuul/src/main/java" charset="UTF-8" />
+  </component>
+</project>

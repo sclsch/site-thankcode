@@ -1,0 +1,9 @@
+# Project exclude paths
+/thankcode-auth/auth-api/target/
+/thankcode-auth/auth-server/target/
+/thankcode-blog/blog-api/target/
+/thankcode-cache-starter/target/
+/thankcode-common/target/
+/thankcode-eureka/target/
+/thankcode-web/target/
+/thankcode-zuul/target/

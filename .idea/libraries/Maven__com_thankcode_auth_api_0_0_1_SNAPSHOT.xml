@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Maven: com.thankcode:auth-api:0.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://E:/maven_repo/com/thankcode/auth-api/0.0.1-SNAPSHOT/auth-api-0.0.1-20191226.155912-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/thankcode-auth/auth-api/auth-api-0.0.1-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://E:/maven_repo/com/thankcode/auth-api/0.0.1-SNAPSHOT/auth-api-0.0.1-20191226.155912-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/thankcode-auth/auth-api/auth-api-0.0.1-SNAPSHOT-sources.jar!/" />
+      <root url="jar://E:/maven_repo/com/thankcode/auth-api/0.0.1-SNAPSHOT/auth-api-0.0.1-20191226.155912-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <title>感谢代码</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}" />
+    <script th:src="@{/js/jquery.js}"></script>
+    <script>
+        var page = 0;//当前几页
+        var size = 45;//每页几条
+        var count = 0 ;//总数
+        var pageCount = 0;//总共几页
+        $(function() {
+            loadBlog(page,size,"");
+            $(document).keydown(function (event) {
+                if (event.keyCode == 13) {
+                    $('#btn-search').triggerHandler('click');
+                }
+            });
+
+            $("#btn-search").click(function () {
+                var titleOrContent = $("#blog-search").val();
+
+                loadBlog(page,size,titleOrContent);
+            });
+
+            $("#next").click(function () {
+                if(page+1<pageCount){
+                    page = page + 1;
+                    var titleOrContent = $("#blog-search").val();
+                    loadBlog(page,size,titleOrContent);
+                }else{
+                    return;
+                }
+            });
+            $("#pre").click(function () {
+                if(page>0){
+                    page = page - 1;
+                    var titleOrContent = $("#blog-search").val();
+                    loadBlog(page,size,titleOrContent);
+                }else{
+                    return;
+                }
+            });
+
+            function loadBlog(page,size,title_or_content){
+                var blog_request_param = {page:page,size:size,title_or_content:title_or_content};
+                $.post("/blog/list",blog_request_param,function (data) {
+                    console.log(data);
+                    $(".blog_list").empty();
+                    count = data.content.totalElements;
+                    pageCount = data.content.totalPage;
+                    $("#current_page").text(data.content.page+1);
+                    $("#totalPage").text("总页数:"+pageCount);
+                    data.content.content.forEach(function (item) {
+                        var blogStr = "<div class='blog'><a target='_blank' href='/blog/show?id="+item.id+"'>"+ item.title +"</a><span class='d'>("+item.updateTime+")</span></div>";
+                        $(".blog_list").append(blogStr);
+                    });
+                });
+            }
+        });
+
+
+    </script>
+    <style>
+
+        .blog-title{
+            font-weight: bold;
+            font-size: 16px;
+            margin: 10px 0 5px 0;
+        }
+        .blog_list{
+            font-size: 14px;
+            line-height: 30px;
+            padding: 5px 0 10px 0;
+        }
+        .blog_list .blog a{
+            text-decoration: none;
+            display: inline-block;
+            min-width: 300px;
+        }
+        .blog_list .blog a:hover{
+            text-decoration: underline;
+        }
+        .blog_list .blog{
+            border:1px dashed #ccc;
+            border-width: 0 0 1px 0;
+            width:490px;
+            float: left;
+        }
+        .blog_list .blog .d{
+            font-size: 12px;
+            color:#ccc;
+            float: right;
+            padding-right: 5px;
+        }
+        .pager{
+            clear:both;
+
+        }
+    </style>
+</head>
+<body>
+  <div class="page-holder">
+   <div th:replace="common/header::header"></div>
+
+    <div class="blog-title">
+        我的博客
+    </div>
+    <div class="blog-search">
+        <input type="text"id="blog-search" name="blog-search" >
+        <button type="button" id="btn-search" name="btn-search" >搜索</button>
+    </div>
+    <div class="blog_list">
+    </div>
+    <div class="pager">
+        <button id="pre" type="button" >上一页</button>
+        <span id="current_page"></span>
+        <button id="next" type="button" >下一页</button>
+        <span id="totalPage"></span>
+    </div>
+    <div th:replace="common/footer::footer"></div>
+  </div>
+</body>
+</html>

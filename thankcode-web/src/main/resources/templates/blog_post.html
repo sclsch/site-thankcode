@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>发布博客-感谢代码</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}" />
+    <link rel="stylesheet" th:href="@{/editor/themes/default/default.css}" />
+    <script th:src="@{/js/jquery.js}"></script>
+    <script charset="utf-8" th:src="@{/editor/kindeditor-min.js}"></script>
+    <script charset="utf-8" th:src="@{/editor/lang/zh_CN.js}"></script>
+    <script>
+        $(function () {
+            $("#subButton").click(function() {
+                var blogData = {title:$("#title").val(),content:editor.html()};
+                $.ajax({
+                    type: "POST",
+                    url: "/blog/post",
+                    contentType:'application/json',
+                    data: JSON.stringify(blogData),
+                    success: function (data) {
+                        if(data.code=='OK'){
+                            alert('添加成功');
+                        }else{
+                            alert(data.message);
+                        }
+
+                    }
+                });
+            });
+        });
+
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="content"]', {
+                allowFileManager : true
+            });
+        });
+
+    </script>
+    <style>
+       #title{
+           width:1000px;
+       }
+       textarea{
+           width:1000px;
+           height:500px;
+           visibility:hidden;
+       }
+    </style>
+</head>
+<body>
+<div class="page-holder">
+    <div th:replace="common/header::header"></div>
+    <div>标题</div>
+    <div><input type="text" name="title" id="title"  /></div>
+    <div> 内容 </div>
+    <div><textarea   name="content" id="content"/></div>
+    <div> <input type="button" id="subButton" value="提交"/></div>
+    <div th:replace="common/footer::footer"></div>
+</div>
+ 
+</body>
+</html>

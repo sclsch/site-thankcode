@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/site/pom.xml" />
+        <option value="$PROJECT_DIR$/parent/pom.xml" />
+        <option value="$PROJECT_DIR$/blog/pom.xml" />
+        <option value="$PROJECT_DIR$/web/pom.xml" />
+        <option value="$PROJECT_DIR$/common/pom.xml" />
+        <option value="$PROJECT_DIR$/webparent/pom.xml" />
+        <option value="$PROJECT_DIR$/web-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-web/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-common/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-blog/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-starter-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-cache-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/thinkcode-blog/blog-server/pom.xml" />
+        <option value="$PROJECT_DIR$/thinkcode-blog/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-blog/blog-server/pom.xml" />
+        <option value="$PROJECT_DIR$/thankcode-blog/blog-api/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

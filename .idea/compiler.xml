@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="thankcode-web" />
+        <module name="blog-server" />
+        <module name="thankcode-common" />
+        <module name="blog-api" />
+        <module name="auth-server" />
+        <module name="thankcode-eureka" />
+        <module name="auth-api" />
+        <module name="thankcode-zuul" />
+        <module name="thankcode-cache-starter" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="auth-api" target="1.8" />
+      <module name="auth-server" target="1.8" />
+      <module name="blog-api" target="1.8" />
+      <module name="blog-server" target="1.8" />
+      <module name="thankcode-auth" target="1.8" />
+      <module name="thankcode-blog" target="1.8" />
+      <module name="thankcode-cache-starter" target="1.8" />
+      <module name="thankcode-common" target="1.8" />
+      <module name="thankcode-eureka" target="1.8" />
+      <module name="thankcode-parent" target="1.8" />
+      <module name="thankcode-starter-parent" target="1.8" />
+      <module name="thankcode-web" target="1.8" />
+      <module name="thankcode-web-parent" target="1.8" />
+      <module name="thankcode-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="blog-server" options="" />
+      <module name="thankcode-parent" options="-parameters" />
+    </option>
+  </component>
+</project>

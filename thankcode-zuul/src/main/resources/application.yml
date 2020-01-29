@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: api-gateway
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 256MB
+      max-request-size: 256MB
+      resolve-lazily: true
+server.port: 2222
+security:
+  basic:
+    enabled: false
+zuul:
+  routes:
+    blog-server:
+      path: /blog-server/**
+      serviceId: blog-server
+  host:
+    max-per-route-connections: 100
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 60000
+  set-content-length: true
+ribbon:
+  eager-load:
+    enabled: true
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
