@@ -107,7 +107,8 @@ public class BlogController {
         Blog one = blogRepository.findOne(id);
         BlogDTO blogDTO = new BlogDTO();
         BeanUtils.copyProperties(one,blogDTO);
-        return new AnswerDTO<BlogDTO>("select one blog",blogDTO,CommonStateEnum.OK);
+        AnswerDTO<BlogDTO> ans = new AnswerDTO<>("select one blog", blogDTO, CommonStateEnum.OK);
+        return ans;
     }
     /**
      * 删除blog

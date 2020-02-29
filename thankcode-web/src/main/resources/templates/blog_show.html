@@ -17,17 +17,21 @@
             font-size: 16px;
             font-weight: bold;
         }
-        .blog-title .d{
-            font-size: 12px;
+        .blog-title .d,.dd{
+            font-size: 10px;
             color:#ccc;
         }
+
     </style>
 </head>
 <body>
 <div class="page-holder">
     <div th:replace="common/header::header"></div>
     <div class="blog-title">
-        <span th:text="${blog.title}"></span><span class="d"  th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}" ></span>
+        <span th:text="${blog.title}"></span>
+    </div>
+    <div class="dd">
+        <span class="d"  th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}" ></span>
     </div>
     <div class="blog-content">
         <span th:utext="${blog.content}"></span>

@@ -1,14 +1,13 @@
 package com.thankcode.blog.api.dto;
 
-import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.sun.javafx.beans.IDProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.thankcode.blog.api.util.DateJsonDeserializer;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -25,7 +24,8 @@ public class BlogDTO implements Serializable {
     private String title;
     @NotEmpty(message="内容不能为空")
     private String content;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+
+    @JsonDeserialize(using = DateJsonDeserializer.class)
     private Date updateTime;
     @Override
     public String toString() {
