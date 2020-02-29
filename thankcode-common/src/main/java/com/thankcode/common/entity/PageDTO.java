@@ -4,7 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by fs on 9/28/17.
+ *
+ * @author suncl
+ * @date 9/28/17
  *
  */
 public class PageDTO<T> implements Serializable {
