@@ -42,7 +42,28 @@
                     return;
                 }
             });
-
+            function getDate(format,str){
+                var oDate = new Date(str);
+                oYear = oDate.getFullYear();
+                oMonth = oDate.getMonth()+1;
+                oDay = oDate.getDate();
+                oHour = oDate.getHours();
+                oMin = oDate.getMinutes();
+                oSec = oDate.getSeconds();
+                if(format == 'yyyy-mm-dd'){
+                    oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) ;//最后拼接时间
+                }else if(format == 'yyyy/mm/dd'){
+                    oTime = oYear +'/'+ getzf(oMonth) +'/'+ getzf(oDay) ;//最后拼接时间
+                }
+                return oTime;
+            };
+            //补0操作
+            function getzf(num){
+                if(parseInt(num) < 10){
+                    num = '0'+num;
+                }
+                return num;
+            }
             function loadBlog(page,size,title_or_content){
                 var blog_request_param = {page:page,size:size,title_or_content:title_or_content};
                 $.post("/blog/list",blog_request_param,function (data) {
@@ -53,7 +74,8 @@
                     $("#current_page").text(data.content.page+1);
                     $("#totalPage").text("总页数:"+pageCount);
                     data.content.content.forEach(function (item) {
-                        var blogStr = "<div class='blog'><a target='_blank' href='/blog/show?id="+item.id+"'>"+ item.title +"</a><span class='d'>("+item.updateTime+")</span></div>";
+                        let date =  getDate('yyyy-mm-dd',item.updateTime);
+                        var blogStr = "<div class='blog'><span class='d'>"+date+"</span><a target='_blank' href='/blog/show?id="+item.id+"'>"+ item.title +"</a></div>";
                         $(".blog_list").append(blogStr);
                     });
                 });
@@ -71,7 +93,7 @@
             margin: 10px 0 5px 0;
         }
         .blog_list{
-            font-size: 14px;
+            font-size: 16px;
             line-height: 30px;
             padding: 5px 0 10px 0;
         }
@@ -84,20 +106,22 @@
             text-decoration: underline;
         }
         .blog_list .blog{
-            border:1px dashed #ccc;
-            border-width: 0 0 1px 0;
             width:100%;
             float: left;
         }
         .blog_list .blog .d{
-            font-size: 12px;
+            font-size: 10px;
             color:#ccc;
-            float: right;
+            float: left;
             padding-right: 5px;
         }
         .pager{
             clear:both;
-
+            font-size: 12px;
+            color: #ccc;
+        }
+        .pager button{
+            color: #635656;
         }
     </style>
 </head>

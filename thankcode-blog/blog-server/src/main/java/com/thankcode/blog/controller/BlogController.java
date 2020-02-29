@@ -93,7 +93,8 @@ public class BlogController {
             blogDTOList.add(blogDTO);
         }
         PageDTO<BlogDTO> pagedBlog = new PageDTO<BlogDTO>(blogDTOList,page,size,all.getTotalPages(),all.getTotalElements());
-        return new AnswerDTO<PageDTO<BlogDTO>>("blog's list",pagedBlog, CommonStateEnum.OK);
+        AnswerDTO<PageDTO<BlogDTO>> pageDTOAnswerDTO = new AnswerDTO<>("blog's list", pagedBlog, CommonStateEnum.OK);
+        return pageDTOAnswerDTO;
     }
 
     /**

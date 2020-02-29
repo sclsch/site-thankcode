@@ -103,7 +103,7 @@ public class WebController {
         String url = zuulUrl+"/blog-server/blog/list?page="+page+"&size="+size+"&title_or_content="+titleOrContent;
         logger.info("webController page:{},size:{},title_or_content:{}",page,size,titleOrContent);
         HttpEntity entity = new HttpEntity(null,headers);
-        ResponseEntity<AnswerDTO> exchange = restTemplate.exchange(url, HttpMethod.GET, entity, AnswerDTO.class);
+        ResponseEntity<AnswerDTO<PageDTO<BlogDTO>>> exchange = restTemplate.exchange(url, HttpMethod.GET, entity, new ParameterizedTypeReference<AnswerDTO<PageDTO<BlogDTO>>>(){});
         AnswerDTO body = exchange.getBody();
         return body;
     }
