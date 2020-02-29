@@ -1,5 +1,6 @@
 package com.thankcode.web.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.thankcode.blog.api.dto.BlogDTO;
 import com.thankcode.common.entity.AnswerDTO;
 import com.thankcode.common.entity.PageDTO;
@@ -10,7 +11,6 @@ import com.thankcode.web.utils.TypeComparator;
 import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -83,7 +83,7 @@ public class WebController {
      */
     @RequestMapping(value = "/blog/add")
     public String postBlogPage(){
-        return "blog_post";
+        return "blog_add";
     }
 
     /**

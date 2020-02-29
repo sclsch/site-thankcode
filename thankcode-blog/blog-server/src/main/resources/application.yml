@@ -6,3 +6,8 @@ spring:
     active: dev
   application:
     name: blog-server
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  session:
+    store-type: none
