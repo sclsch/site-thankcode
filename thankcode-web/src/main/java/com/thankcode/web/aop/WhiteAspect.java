@@ -86,8 +86,10 @@ public class WhiteAspect implements Ordered {
         String requestURI = request.getRequestURI();
         logger.info("requestURI:{}",requestURI);
         if( "/blog/post".equals(requestURI)
-               ||"/blog/del".equals(requestURI)
-                    ||"/blog/edit".equals(requestURI)){
+                ||"/blog/del".equals(requestURI)
+                ||"/blog/edit".equals(requestURI)
+                ||"/blog/add".equals(requestURI)
+        ){
 
             if(!ipList.contains(ip)){
                 logger.info("该ip需要添加白名单，请联系研发人员:{}",ip);

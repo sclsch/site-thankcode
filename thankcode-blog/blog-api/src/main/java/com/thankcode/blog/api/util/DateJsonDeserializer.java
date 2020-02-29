@@ -18,8 +18,6 @@ import java.util.Date;
  * 注意：本内容仅限于燕大燕软内部传阅，禁止外泄以及用于其他的商业用途。。
  */
 public class DateJsonDeserializer extends JsonDeserializer<Date> {
-
-
     @Override
     public Date deserialize(JsonParser parser, DeserializationContext context)
             throws IOException, JsonProcessingException {
