@@ -11,7 +11,7 @@
         var count = 0 ;//总数
         var pageCount = 0;//总共几页
         $(function() {
-            loadBlog(page,size,"");
+
             $(document).keydown(function (event) {
                 if (event.keyCode == 13) {
                     $('#btn-search').triggerHandler('click');
@@ -58,6 +58,7 @@
                     });
                 });
             }
+            loadBlog(page,size,"");
         });
 
 
@@ -85,7 +86,7 @@
         .blog_list .blog{
             border:1px dashed #ccc;
             border-width: 0 0 1px 0;
-            width:490px;
+            width:100%;
             float: left;
         }
         .blog_list .blog .d{

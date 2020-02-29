@@ -26,8 +26,8 @@ zuul:
 ribbon:
   eager-load:
     enabled: true
-  ReadTimeout: 60000
-  ConnectTimeout: 60000
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
 
 hystrix:
   command:

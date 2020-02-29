@@ -11,12 +11,14 @@ package com.thankcode.web.aop;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 
+import com.thankcode.common.entity.AnswerDTO;
 import com.thankcode.common.entity.ResEntity;
 import com.thankcode.common.enums.CodeEnum;
 import com.thankcode.common.enums.ResEnum;
 import com.thankcode.common.util.ClientIpUtil;
 import com.thankcode.common.util.IdUtils;
 import com.thankcode.common.util.LogUtil;
+import com.thankcode.web.config.WhiteIpPropertie;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -34,7 +36,9 @@ import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * controller切面  验签 和 解密
@@ -45,8 +49,9 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Aspect
 @Component
-public class ControllerAspect implements Ordered {
-
+public class WhiteAspect implements Ordered {
+    @Resource
+    private WhiteIpPropertie whiteIpPropertie;
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
@@ -66,8 +71,33 @@ public class ControllerAspect implements Ordered {
         logger.info("<<<<<请求头Content-Type:{}>>>>>>>",request.getHeader("Content-Type"));
         //用户ip
         String ip = ClientIpUtil.getIpAddress(request);
+        logger.info("未过滤前ip：{}",ip);
+        //允许的ip
+        List<String> ipList = whiteIpPropertie.getIpList();
+        if(ipList.size() == 0){
+            logger.info("未配置白名单，任何ip均可访问");
+            return pjp.proceed();
+        }else{
+            for(String ipWhite:ipList){
+                logger.info("ip白名单：{}",ipWhite);
+            }
+        }
+        //需要拦截的服务
+        String requestURI = request.getRequestURI();
+        logger.info("requestURI:{}",requestURI);
+        if( "/blog/post".equals(requestURI)
+               ||"/blog/del".equals(requestURI)
+                    ||"/blog/edit".equals(requestURI)){
 
+            if(!ipList.contains(ip)){
+                logger.info("该ip需要添加白名单，请联系研发人员:{}",ip);
+                AnswerDTO answerDTO=new AnswerDTO();
+                answerDTO.setMessage("不劳而食，拾人牙慧");
+                return answerDTO;
+            }
+        }
         logger.info("<<<<获取客户端ip：{}>>>>>>",ip);
+
         //TODO 取得参数，校验必填项
         Object[] args = pjp.getArgs();
 

@@ -98,7 +98,7 @@ public class WebController {
      */
     @RequestMapping(value = "/blog/show")
     public String show(Long id, Model model, @Token HttpHeaders headers){
-        logger.info("web中发送的博客id:{}",id);
+        logger.info("webController 显示博客id:{}",id);
         String url = zuulUrl+"/blog-server/blog/show?id="+id;
         HttpEntity entity = new HttpEntity(null,headers);
         ResponseEntity<AnswerDTO<BlogDTO>> answerDTO = restTemplate.exchange(url, HttpMethod.GET,entity,
