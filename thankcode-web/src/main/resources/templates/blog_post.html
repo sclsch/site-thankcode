@@ -32,7 +32,14 @@
         var editor;
         KindEditor.ready(function(K) {
             editor = K.create('textarea[name="content"]', {
-                allowFileManager : true
+                allowFileManager : true,
+                uploadJson:'/uploadJson',
+                fileManagerJson:'/fileManagerJson',
+                afterUpload: function (url,data,name) {
+                    console.log("ulr:"+url);
+                    console.log("data:"+data);
+                    console.log("name:"+name);
+                }
             });
         });
 

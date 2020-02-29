@@ -1,4 +1,9 @@
 zuul-url: http://10.168.0.17:2222
 white:
   ip-list:
-    - 120.8.93.167
+    - 121.24.123.2
+
+uploadPrefix: /home/thankcode.com/images/
+spring:
+  session:
+    store-type: none

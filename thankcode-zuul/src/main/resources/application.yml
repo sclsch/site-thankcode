@@ -9,6 +9,8 @@ spring:
       max-file-size: 256MB
       max-request-size: 256MB
       resolve-lazily: true
+  session:
+    store-type: none
 server.port: 2222
 security:
   basic:

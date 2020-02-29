@@ -1,3 +1,8 @@
 zuul-url: http://localhost:2222
 white:
   ip-list:
+
+uploadPrefix: c:\\images\\
+spring:
+  session:
+    store-type: none
