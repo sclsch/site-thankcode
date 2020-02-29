@@ -23,7 +23,8 @@ public class DateJsonDeserializer extends JsonDeserializer<Date> {
             throws IOException, JsonProcessingException {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            return sdf.parse(parser.getValueAsString());
+            String valueAsString = parser.getValueAsString();
+            return sdf.parse(valueAsString);
         } catch (Exception e) {
             e.printStackTrace();
         }
